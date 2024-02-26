@@ -20,16 +20,17 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
           child: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Lock Logo
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Icon(
+            const Icon(
               Icons.lock,
               size: 100,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Text(
@@ -56,7 +57,7 @@ class LoginPage extends StatelessWidget {
               hintText: "Password",
               obscureText: false,
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             //Forgot Password
             Padding(
               padding: const EdgeInsets.symmetric(horizontal:25.0),
@@ -69,11 +70,11 @@ class LoginPage extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 25,),
+            const SizedBox(height: 25,),
             //Sign In Button
             MyButton(onTap: signUserIn,),
 
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
             //Or continue with
             Padding(
               padding: const EdgeInsets.symmetric(horizontal:25.0),
@@ -98,17 +99,34 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
+
+            const SizedBox(height: 50,),
             // Google Sign In Button
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                //google button 
             SquareTile(imagePath: 'lib/images/google.png'),
 
-            const SizedBox(width: 10,),
+            SizedBox(width: 25,),
 
             // apple button
-            SquareTile(imagePath: 'lib/images/apple.png')
+           SquareTile(imagePath: 'lib/images/apple.png')
+            ],),
+
+            const SizedBox(height: 50,),
+            //not a member? Register 
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Text('Not a member?', style:  TextStyle(
+                color: Colors.grey[70]
+              ),),
+              const SizedBox(width: 4,),
+              const Text('Register now ', style: TextStyle(
+                color: Colors.blue, fontWeight: FontWeight.bold
+              ),)
             ],)
            
           ],
